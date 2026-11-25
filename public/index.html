@@ -1,0 +1,65 @@
+<!-- Author: TODO - your name | Student ID: TODO - your student ID -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate application code and tests with a local MCP multi-agent system.">
+    <title>AI Coder · Medical Symptom Tracker</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="AI Coder home"><span class="brand-icon" aria-hidden="true">&lt;/&gt;</span> AI Coder</a>
+      <span class="course">SWE 270P <span class="divider">/</span> Final project</span>
+      <span class="local-label"><span class="dot"></span> Local workspace</span>
+    </header>
+    <main>
+      <section class="intro">
+        <p class="eyebrow">FROM REQUIREMENTS TO RUNNABLE CODE</p>
+        <h1>A starting point.<br><span>A working application.</span></h1>
+        <p class="intro-copy">Describe what you want to build. Three specialized agents use MCP to plan your application, write its code, and create its tests.</p>
+      </section>
+      <div class="workspace">
+        <section class="panel input-panel" aria-labelledby="input-heading">
+          <div class="panel-heading"><div><span class="step-number">01</span><h2 id="input-heading">Define your application</h2></div><button id="load-example" class="text-button" type="button">Use tracker example <span aria-hidden="true">↗</span></button></div>
+          <form id="generation-form">
+            <label for="description">Application description</label>
+            <p class="field-hint" id="description-hint">What should the application do, and who is it for?</p>
+            <textarea id="description" name="description" rows="5" minlength="10" maxlength="6000" required aria-describedby="description-hint" placeholder="A medical symptom tracker that helps users log symptoms and explore patterns over time…"></textarea>
+            <div class="label-row"><label for="requirements">Requirements</label><span id="requirement-count">0 requirements</span></div>
+            <p class="field-hint" id="requirements-hint">One specific, testable requirement per line. Up to 30.</p>
+            <textarea id="requirements" name="requirements" rows="10" maxlength="30029" required aria-describedby="requirements-hint" placeholder="Users can log a symptom with a date, severity, and duration.&#10;Entries remain saved after reloading the application.&#10;Users can filter their history by symptom and date."></textarea>
+            <div class="model-box"><div><span class="model-label">LOCAL MODEL</span><strong id="model-name">Loading configuration…</strong><span id="model-health" role="status">Checking connection…</span></div><button id="check-model" class="text-button" type="button">Check</button></div>
+            <div id="form-error" class="error-message" role="alert" hidden></div>
+            <button id="generate" class="primary-button" type="submit"><span id="generate-label">Generate application</span><span aria-hidden="true">→</span></button>
+            <p class="form-note">Runs locally through Ollama. Generation may take several minutes.</p>
+          </form>
+        </section>
+        <section class="panel output-panel" aria-labelledby="output-heading">
+          <div class="panel-heading"><div><span class="step-number">02</span><h2 id="output-heading">Your generated project</h2></div><span id="run-badge" class="badge">Ready when you are</span></div>
+          <div class="output-body">
+            <ol class="pipeline" aria-label="Generation stages">
+              <li id="stage-0"><span class="stage-icon">1</span><div><strong>Plan</strong><span>Requirements &amp; acceptance criteria</span></div><span class="stage-status">Waiting</span></li>
+              <li id="stage-1"><span class="stage-icon">2</span><div><strong>Build</strong><span>Executable application code</span></div><span class="stage-status">Waiting</span></li>
+              <li id="stage-2"><span class="stage-icon">3</span><div><strong>Test</strong><span>Corresponding executable test cases</span></div><span class="stage-status">Waiting</span></li>
+            </ol>
+            <div id="run-message" class="run-message" role="status" aria-live="polite">Your project files will appear here after generation.</div>
+            <div class="usage-heading"><h3>LLM usage</h3><span>Actual provider counts</span></div>
+            <dl class="usage"><div><dt>API calls</dt><dd id="api-calls">0</dd></div><div><dt>Input tokens</dt><dd id="input-tokens">0</dd></div><div><dt>Output tokens</dt><dd id="output-tokens">0</dd></div><div><dt>Total tokens</dt><dd id="total-tokens">0</dd></div></dl>
+            <p id="usage-note" class="small-note" hidden></p>
+            <div id="empty-state" class="empty-state"><span aria-hidden="true">{ }</span><h3>Built from your requirements</h3><p>Application source, test cases, setup instructions, and a usage report in one downloadable project.</p></div>
+            <div id="results" hidden>
+              <div class="results-heading"><h3>Project files</h3><a id="download" class="download-button" href="#">Download ZIP <span aria-hidden="true">↓</span></a></div>
+              <label class="file-label" for="file-picker">View file</label><select id="file-picker"></select>
+              <pre class="code-preview" tabindex="0" aria-label="Generated file contents"><code id="file-content"></code></pre>
+              <p class="verification-note">JavaScript syntax checked. Generated tests have not been run. Unzip the project and follow its README to run the application and tests.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer><span>Planner → Developer → Test writer</span><span>MCP over stdio <span class="divider">·</span> Node.js + Ollama</span></footer>
+    </main>
+  </body>
+</html>

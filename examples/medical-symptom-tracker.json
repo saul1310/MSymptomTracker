@@ -1,0 +1,13 @@
+{
+  "description": "A Medical Symptom Tracker that lets users log symptoms and associated factors, review their history, and see how symptom severity changes over time. This is a personal logging application, not a diagnostic tool.",
+  "requirements": [
+    "Users can add a symptom entry with a symptom name, date and time, severity as an integer from 1 to 10, and duration in minutes as a nonnegative integer.",
+    "Each entry can include optional food, stress level, environmental factors, and free-text notes.",
+    "Users can view their saved symptom entries in chronological order, with the newest entry first.",
+    "Users can edit and delete existing entries.",
+    "Users can filter entries by symptom name and an inclusive date range.",
+    "Users can view a simple severity-over-time chart for a selected symptom using browser-native graphics.",
+    "Entries persist locally across application restarts or browser reloads.",
+    "The application rejects missing symptom names, invalid dates, severity outside 1–10, and negative duration with clear validation messages."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "symptom-tracker-ai-coder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SWE 270P: a local MCP multi-agent application generator",
+  "engines": { "node": ">=22.9.0" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.mjs",
+    "dev": "node --env-file-if-exists=.env --watch src/server.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "fflate": "^0.8.2",
+    "zod": "^3.25.76"
+  }
+}
